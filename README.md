@@ -8,7 +8,13 @@ Generates a dot file based on your Clojure/ClojureScript code.
 
 ## Usage
 
+If you want to see the dot code...
+
     $ lein run <path-to-clj-file>
+
+Or pipe directly into dot to get an SVG.
+
+    $ lein run <path-to-clj-file> | dot -Tsvg > codegraph.svg
 
 ## Options
 

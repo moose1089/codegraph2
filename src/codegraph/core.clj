@@ -1,6 +1,5 @@
 (ns codegraph.core
-  (:require [clojure.walk :as walk]
-            [clojure.pprint :as pprint])
+  (:require [clojure.walk :as walk])
   (:gen-class))
 
 (def triggered (atom false))
