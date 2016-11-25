@@ -1,6 +1,6 @@
 # codegraph
 
-Generates a dot file based on your Clojure/ClojureScript code.
+Generates a dot file based on Clojure/ClojureScript code.
 
 ## Installation
 
@@ -22,7 +22,7 @@ None.
 
 ## Examples
 
-Spoiler: Running codegraph on itself will give you this...
+Spoiler: Running codegraph on [itself](src/codegraph/core.clj) will give you this...
 
 ![codegraph graph of codegraph itself](codegraph.png)
 
