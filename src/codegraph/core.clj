@@ -28,12 +28,19 @@
 
 (defmethod process :default [form] form)
 
+;(defmethod process clojure.lang.PersistentArrayMap [form]
+;  (println "MAP found" form)
+;  form)
+
 (defmethod process clojure.lang.Symbol [form]
-  (let [sym (name form)]
+;  (println "FORM found" form)
+  (let [sym
+        (name form)
+        #_(str "/" (name form))]
     (if (trigger? sym)
       (reset! triggered true)
       (if @triggered
-        (register-current! sym)
+        (register-current!  sym)
         (register-relation! sym)))))
 
 (defn draw-one [a b]
@@ -61,5 +68,7 @@
   (doall (map println (template (remove nil? lines)))))
 
 (defn -main [& args]
+;  (println "graph " (graph (first args)))
   (walk/prewalk process (graph (first args)))
+  (println @relations)
   (output (mapcat (partial apply draw-many) @relations)))
