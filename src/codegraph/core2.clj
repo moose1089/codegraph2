@@ -1,5 +1,6 @@
 (ns codegraph.core2
   (:require
+   [clojure.string :as string]
    [codegraph.other :as other])
   (:gen-class))
 
@@ -61,6 +62,7 @@
   (flatten
    ["# call with ` | dot -Tsvg > codegraph.svg`"
     "digraph G {"
+    "rankdir=LR"
     "edge ["
     "arrowtail = \"none\""
     "arrowhead = \"open\""
